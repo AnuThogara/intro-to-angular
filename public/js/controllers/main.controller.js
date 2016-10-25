@@ -1,6 +1,19 @@
 
 (function(){
-  angular.module('inro',[]); //setter syntax
+  angular.module('intro')//setter syntax
+
+.controller('MainController', MainController);
+
+MainController.$inject = ['$scope', 'TodoService'];
+function MainController($scope, TodoService){
+  console.log(TodoService.get());
+  TodoService.create('make more todos');
+  console.log(TodoService.get());
+  TodoService.update(0, 'buy something');
+  console.log(TodoService.get());
+  TodoService.delete(2);
+  console.log(TodoService.get());
 
 
+}
 }());
